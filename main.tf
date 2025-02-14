@@ -1,9 +1,10 @@
-resource "azurerm_data_factory" "adf" {
-  name                = var.adf_name
+resource "azurerm_databricks_workspace" "adb" {
+  name                = var.workspace_name
+  resource_group_name = var.rg_name
   location            = var.location
-  resource_group_name = var.resource_group_name
+  sku                 = var.sku
 }
 
-output "adf_id" {
-  value = azurerm_data_factory.adf.id
+output "databricks_id" {
+  value = azurerm_databricks_workspace.adb.id
 }

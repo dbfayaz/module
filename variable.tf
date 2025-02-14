@@ -1,14 +1,19 @@
-variable "adf_name" {
-  description = "The name of the Azure Data Factory instance."
+variable "workspace_name" {
+  description = "The name of the Databricks workspace."
+  type        = string
+}
+
+variable "rg_name" {
+  description = "The name of the resource group in which the Databricks workspace will be created."
   type        = string
 }
 
 variable "location" {
-  description = "The Azure region where the Data Factory instance will be deployed."
+  description = "The Azure region where the Databricks workspace will be deployed."
   type        = string
 }
 
-variable "resource_group_name" {
-  description = "The name of the resource group that will host the Data Factory instance."
+variable "sku" {
+  description = "The SKU for the Databricks workspace (e.g., 'standard' or 'premium')."
   type        = string
 }
