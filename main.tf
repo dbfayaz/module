@@ -1,10 +1,11 @@
-resource "azurerm_databricks_workspace" "adb" {
-  name                = var.workspace_name
-  resource_group_name = var.rg_name
+resource "azurerm_key_vault" "kv" {
+  name                = var.key_vault_name
   location            = var.location
-  sku                 = var.sku
+  resource_group_name = var.resource_group_name
+  tenant_id           = var.tenant_id
+  sku_name            = var.sku_name 
 }
 
-output "databricks_id" {
-  value = azurerm_databricks_workspace.adb.id
+output "key_vault_id" {
+  value = azurerm_key_vault.kv.id
 }
